@@ -1,0 +1,225 @@
+@import "../helpers/_helpers";
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+body {
+    text-rendering: optimizeLegibility;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    min-width: 360px;
+    //overflow-x: hidden;
+}
+pre {
+    white-space: pre-line;
+}
+.clear {
+    clear: both;
+}
+a {
+    outline: 0;
+    &:active {
+        outline: 0;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+ol,
+ul {
+    li {
+        @include first(1) {
+            margin-top: 0;
+        }
+        @include last(1) {
+            margin-bottom: 0;
+        }
+    }
+}
+ul {
+    li {
+        list-style: none;
+        position: relative;
+    }
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+hr {
+    border: none;
+    width: 100%;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-style: solid;
+    th,
+    td {
+        vertical-align: top;
+    }
+}
+.table-nostyle {
+    border: none;
+    thead {
+        background-color: transparent;
+    }
+    tr {
+        background-color: transparent;
+        th, td {
+            border: none;
+            padding: 0;
+            line-height: inherit !important;
+        }
+    }
+}
+.table-wrapper {
+    overflow: auto;
+}
+button {
+    outline: 0;
+    &:focus {
+        outline: none;
+    }
+}
+.btn,
+.to-basket .form-actions,
+.form-submit,
+.edit-submit,
+.ui-dialog-buttonpane button {
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    color: inherit;
+}
+.btn {
+    &:focus {
+        box-shadow: none;
+    }
+}
+input[type="tel"],
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+textarea {
+    display: block;
+    width: 100%;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    @include placeholder() {
+        opacity: 1;
+    }
+    &:focus {
+        outline: 0;
+    }
+    &:disabled,
+    &[readonly] {
+        opacity: 1;
+    }
+}
+textarea {
+    width: 100%;
+    resize: none;
+    outline: none;
+}
+
+// скрываем дефолтные стрелки у поля
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none; // Yeah, yeah everybody write about it
+}
+input[type='number'],
+input[type="number"]:hover,
+input[type="number"]:focus {
+    appearance: none;
+    -moz-appearance: textfield;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+    &.form-control {
+        appearance: none; // Fix appearance for date inputs in Safari
+    }
+}
+.webform-confirmation__back {
+    display: none;
+}
+form {
+    [style=""],
+    [id^="ajax-wrapper"] {
+        display: contents;
+    }
+    .ajax-new-content {
+        display: none !important;
+    }
+}
+.iti {
+    display: block;
+}
+.select2-container--default {
+    .select2-selection--single {
+        outline: none !important;
+    }
+}
+.sfi-wrapper {
+    width: 100% !important;
+    outline: none !important;
+}
+.imce-upload-form {
+    input[type="file"] {
+        display: block !important;
+    }
+}
+.rouble {
+    font-family: Rouble;
+}
+.stretched-link {
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        pointer-events: auto;
+    }
+}
+a.lightgallery {
+    border-bottom: none;
+}
+.overlay {
+    display: block !important;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    &.is-open {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+.dialog-off-canvas-main-canvas {
+    overflow: clip;
+}

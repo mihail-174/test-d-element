@@ -1,0 +1,24 @@
+@import "../helpers/_helpers";
+
+:root {
+    --container: 940px;
+    //--grid-column: 12;
+    //--grid-width: 78px;
+    //--grid-gap: 24px;
+
+    //@include max-screen(1280px) {
+    //    --container: 940px;
+    //    //--grid-width: 68px;
+    //}
+    @include max-screen(1023px) {
+        --container: calc(100vw - 32px);
+        //--grid-column: 4;
+        //--grid-width: 1fr;
+        //--grid-gap: 16px;
+    }
+    //@include max-screen(768px) {
+    //    :root {
+    //        //--grid-gap: 8px;
+    //    }
+    //}
+}

@@ -1,0 +1,28 @@
+@import "../helpers/helpers";
+
+@include font-mixin('galien', (
+        300: "/light",
+        400: "/regular",
+        600: "/book",
+        700: "/bold",
+        900: "/poster",
+));
+@include font-mixin('gilroy', (
+        100: "/thin",
+        200: "/ultralight",
+        300: "/light",
+        400: "/regular",
+        500: "/medium",
+        600: "/semibold",
+        700: "/bold",
+        800: "/extrabold",
+        900: "/black",
+));
+
+@include font-mixin('rouble', (
+        400: "/rouble"
+));
+
+@include font-mixin('icomoon', (
+        400: "/icomoon"
+));

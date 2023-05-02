@@ -1,0 +1,116 @@
+@import "../helpers/helpers";
+
+.promo {
+    overflow: hidden;
+    background: linear-gradient(0deg, rgba(152, 195, 232, 0.2) 8.84%, rgba(152, 195, 232, 0) 31.12%);
+    position: relative;
+    height: 768px;
+}
+.promo__container {
+    height: 100%;
+}
+.promo__list {
+    height: 100%;
+    //width: calc(100vw - 16px);
+    width: 100%;
+    grid-column: 1/15;
+    grid-row: 1/3;
+    overflow: hidden;
+}
+.promo__list-wrapper {
+    display: flex;
+    height: 100%;
+}
+.promo__item {
+    position: relative;
+    width: 100%;
+}
+.promo__container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.promo__image {
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    z-index: 0;
+    max-width: 687px;
+    //height: 612px;
+    bottom: 0;
+    margin: auto 0 auto -27px;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+.promo__image_desktop {
+    display: block;
+}
+.promo__image_mobile {
+    display: none;
+}
+.promo__content {
+    > * {
+        @include first(1) {
+            margin-top: 0;
+        }
+        @include last(1) {
+            margin-bottom: 0;
+        }
+    }
+}
+.promo__title {
+    max-width: 514px;
+    font-size: 64px;
+    line-height: 74px;
+    letter-spacing: 0.04em;
+    margin: 41px 0;
+}
+.promo__description {
+    max-width: 425px;
+    color: rgba(31, 63, 104, 0.6);
+    margin: 41px 0;
+}
+.promo__button-more {
+    margin: 76px 0;
+}
+
+@include max-screen(1023px) {
+    .promo {
+        height: 75vw;
+    }
+    .promo__title {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    .promo__description {
+        max-width: 335px;
+    }
+}
+@include max-screen(767px) {
+    .promo {
+        height: auto;
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+    .promo__container {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+    .promo__image {
+        align-self: center;
+        position: relative;
+        top: 0;
+        left: 0;
+        max-width: 328px;
+        margin: 0 0 24px;
+    }
+    .promo__title {
+        max-width: none;
+    }
+    .promo__description {
+        max-width: none;
+    }
+}

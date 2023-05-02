@@ -1,0 +1,63 @@
+@import "../../../helpers/helpers";
+
+.teaser-help {
+    padding: 48px;
+    background-color: #fff;
+    box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+    > * {
+        @include last(1) {
+            margin-bottom: 0 !important;
+        }
+    }
+    border-radius: 10px;
+    .teaser-help__image {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 48px;
+        img {
+            display: block;
+        };
+    }
+    .teaser-help__title {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 30px;
+        margin: 16px 0;
+    }
+    .teaser-help__description {
+        font-size: 16px;
+        line-height: 26px;
+        margin: 16px 0;
+        color: rgba(31, 63, 104, 0.6);
+    }
+    .teaser-help__more-link {
+        margin: 32px 0;
+        a {
+            display: flex;
+            align-items: center;
+            grid-gap: 24px;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 30px;
+            color: #5a98d0;
+            border: none;
+            transition: color .3s;
+            &:hover {
+                color: var(--color-base-link-hover);
+            }
+            .icon {
+                width: 24px;
+                height: 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}
+
+@include max-screen(767px) {
+    .teaser-help {
+        padding: 24px;
+    }
+}

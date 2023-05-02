@@ -1,0 +1,118 @@
+@import "../../helpers/helpers";
+
+.header {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.header__main {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    height: 128px;
+    z-index: 2;
+    padding: 0 83px;
+}
+
+.header__translate {
+    flex: 1;
+    a {
+        display: flex;
+        font-size: 0;
+        position: relative;
+        width: 48px;
+        border: none;
+        &:hover {
+            &:after {
+                left: 0;
+            }
+        }
+        &:before {
+            content: '';
+            display: flex;
+            width: 32px;
+            height: 32px;
+            background-color: #316099;
+            border-radius: 24px;
+            flex: 0 0 auto;
+        }
+        &:after {
+            content: 'A';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 32px;
+            height: 32px;
+            background-color: #fff;
+            border: 2px solid #316099;
+            border-radius: 24px;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 28px;
+            color: #316099;
+            position: absolute;
+            top: 0;
+            left: 16px;
+            transition: left .4s;
+        }
+    }
+}
+.header__menu-link {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    font-size: 0;
+    &:hover {
+        span {
+            background-color: var(--color-secondary);
+            &:before,
+            &:after {
+                background-color: var(--color-secondary);
+            }
+        }
+    }
+    span {
+        background-color: var(--color-primary);
+        width: 24px;
+        height: 3px;
+        position: relative;
+        transition: background-color .3s;
+        &:before,
+        &:after {
+            content: '';
+            background-color: var(--color-primary);
+            width: 24px;
+            height: 3px;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transition: background-color .3s;
+        }
+        &:before {
+            margin-top: -8px;
+        }
+        &:after {
+            margin-top: 6px;
+        }
+    }
+}
+.header__menu-wrapper {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@include max-screen(1023px) {
+    .header__main {
+        height: 64px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}

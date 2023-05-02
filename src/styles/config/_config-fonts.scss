@@ -1,0 +1,17 @@
+@import "../helpers/_helpers";
+
+:root {
+
+    // шрифты
+    --font-family-base: 'Gilroy', sans-serif;           // базовый шрифт
+    --font-family-heading: 'Gilroy', sans-serif;        // шрифт заголовков h1...h6
+    --font-family-primary:'Gilroy', sans-serif;         // дополнительный шрифт 1
+    --font-family-secondary: 'Gilroy', sans-serif;      // дополнительный шрифт 2
+
+    --rouble: Rouble;
+
+    // размеры
+    --font-size: 16px;
+    --font-size-lg: 20px;
+    --font-size-sm: 14px;
+}
